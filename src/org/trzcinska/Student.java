@@ -21,14 +21,26 @@ public class Student implements Comparable<Student>{
         return lastName;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     @Override
     public int compareTo(Student o) {
         //compare by LastName
-        int lastNameCheck = this.lastName.compareTo(o.lastName);
+        int lastNameCheck = this.getLastName().compareTo(o.getLastName());
         if (lastNameCheck != 0) {
             return lastNameCheck;
         }
         //compare by age
-        return Integer.valueOf(this.age).compareTo(Integer.valueOf(o.age));
+        return Integer.valueOf(this.getAge()).compareTo(Integer.valueOf(o.getAge()));
     }
 }
